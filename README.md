@@ -18,7 +18,7 @@ go get github.com/jchenry/peloton
 		}
 	}
 	peloton.Authenticate(c)
-    rides := peloton.GetRides(c, peloton.FilterSpec{
+    	rides := peloton.GetRides(c, peloton.FilterSpec{
 		Category: peloton.Cycling,
 		Page:     0,
 		Limit:    10000,
