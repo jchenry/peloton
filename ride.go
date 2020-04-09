@@ -148,7 +148,7 @@ func GetInstructors(c Client, f SearchFilter) ([]model.Instructor, error) {
 func getArch(c Client, f SearchFilter) (*model.Archive, error) {
 	arch := &model.Archive{}
 
-	resp, err := c.HTTPClient.Get(fmt.Sprintf("%s/api/v2/ride/archived%s", apiBase, f.toURLQuery()))
+	resp, err := c.HTTPClient.Get(fmt.Sprintf("%s/api/v2/ride/archived?%s", apiBase, f.toURLQuery()))
 	if err != nil {
 		return arch, err
 	}
