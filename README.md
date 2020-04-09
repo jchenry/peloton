@@ -12,12 +12,12 @@ go get github.com/jchenry/peloton
 
 ```
 	j, _ := cookiejar.New(&cookiejar.Options{PublicSuffixList: publicsuffix.List})
-	c := peloton.Client {
+	c := peloton.Client{
 		HTTPClient: http.Client{
-			Jar: j
-		}
+			Jar: j,
+		},
 	}
-	peloton.Authenticate(c)
+	peloton.Authenticate(c, "peloton_user", "password")
     	rides := peloton.GetRides(c, peloton.FilterSpec{
 		Category: peloton.Cycling,
 		Page:     0,
