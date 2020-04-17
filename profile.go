@@ -4,16 +4,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+
+	"github.com/jchenry/peloton/model"
 )
 
-//Profile represents the vital stats of a user of peloton
-type Profile struct {
-	Weight float32 `json:"weight"`
-}
-
 //GetProfile returns the profile for the user of the client
-func GetProfile(c Client) (Profile, error) {
-	p := Profile{}
+func GetProfile(c Client) (model.Profile, error) {
+	p := model.Profile{}
 
 	resp, err := c.HTTPClient.Get(fmt.Sprintf("%s/api/user/%s", apiBase, c.user.ID))
 	if err != nil {

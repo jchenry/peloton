@@ -11,78 +11,19 @@ import (
 	"github.com/jchenry/peloton/model"
 )
 
-//RideCategory represents the category of ride to take in peloton
-type RideCategory int
-
-func (r RideCategory) String() string {
-	return strings.ToLower([]string{
-		"Outdoor",
-		"Running",
-		"Cycling",
-		"Strength",
-		"Yoga",
-		"Meditation",
-		"Stretching",
-		"Bootcamp",
-		"Walking",
-		"Cardio",
-	}[r])
-}
-
-//GetRideCategory returs the RideCategory based on the string representation
-func GetRideCategory(s string) RideCategory {
-	switch s {
-	case "Outdoor":
-		return Outdoor
-	case "Running":
-		return Running
-	case "Cycling":
-		return Cycling
-	case "Strength":
-		return Strength
-	case "Yoga":
-		return Yoga
-	case "Meditation":
-		return Meditation
-	case "Stretching":
-		return Stretching
-	case "Bootcamp":
-		return Bootcamp
-	case "Walking":
-		return Walking
-	case "Cardio":
-		return Cardio
-	default:
-		return Cycling
-	}
-}
-
-const (
-	Outdoor RideCategory = iota
-	Running
-	Cycling
-	Strength
-	Yoga
-	Meditation
-	Stretching
-	Bootcamp
-	Walking
-	Cardio
-)
-
 //SearchFilter represents the data needed to filter Peloton's ride catalog
 type SearchFilter struct {
-	Category        RideCategory //browse_category
-	Duration        int          //duration (sec)
-	Difficulty      string       //difficulty_level
-	Booknmarked     bool         //is_favorite_ride (Bookmarked)
-	ClosedCaptioned bool         //has_closed_captions
-	ClassType       string       //class_type_id
-	MusicType       string       //super_genre_id
-	Instructor      string       //instructor_id
-	Page            int          //page
-	Limit           int          //limit
-	SortBy          string       //sort_by (desc)
+	Category        model.RideCategory //browse_category
+	Duration        int                //duration (sec)
+	Difficulty      string             //difficulty_level
+	Booknmarked     bool               //is_favorite_ride (Bookmarked)
+	ClosedCaptioned bool               //has_closed_captions
+	ClassType       string             //class_type_id
+	MusicType       string             //super_genre_id
+	Instructor      string             //instructor_id
+	Page            int                //page
+	Limit           int                //limit
+	SortBy          string             //sort_by (desc)
 }
 
 func (f *SearchFilter) toURLQuery() string {
