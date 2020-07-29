@@ -1,0 +1,10 @@
+kind: pipeline
+type: docker
+name: peloton
+
+steps:
+- name: build
+  image: golang
+  commands: 
+  - go build 
+  - go test
