@@ -2,6 +2,8 @@
 
 A client library for the undocumented Peloton API
 
+[![Build Status](https://ci.j5y.xyz/api/badges/jchenry/peloton/status.svg)](https://ci.j5y.xyz/jchenry/peloton)
+
 ## Install
 
 ```
