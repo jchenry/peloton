@@ -74,18 +74,6 @@ func GetRides(c Client, f SearchFilter) ([]model.Ride, error) {
 	return a.Rides, err
 }
 
-//GetRideTypes return a list of RideTypes based on the SearchFilter
-func GetRideTypes(c Client, f SearchFilter) ([]model.RideType, error) {
-	a, err := getArch(c, f)
-	return a.RideTypes, err
-}
-
-//GetInstructors return a list of Instructors based on the SearchFilter
-func GetInstructors(c Client, f SearchFilter) ([]model.Instructor, error) {
-	a, err := getArch(c, f)
-	return a.Instructors, err
-}
-
 func getArch(c Client, f SearchFilter) (*model.Archive, error) {
 	arch := &model.Archive{}
 
