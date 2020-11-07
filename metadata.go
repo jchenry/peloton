@@ -15,7 +15,7 @@ func GetRideTypes(c Client, f SearchFilter) ([]model.RideType, error) {
 }
 
 //GetInstructors return a list of Instructors based on the SearchFilter
-func GetInstructors(c Client, f SearchFilter) ([]model.Instructor, error) {
+func GetInstructors(c Client) ([]model.Instructor, error) {
 	m, err := metadataMappings(c)
 	return m.Instructors, err
 }
