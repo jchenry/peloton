@@ -47,5 +47,5 @@ func GetAllWorkouts(c Client) (model.WorkoutHistory, error) {
 		}
 		twh.Workouts = append(twh.Workouts, wh.Workouts...)
 	}
-
+	return twh, nil
 }
