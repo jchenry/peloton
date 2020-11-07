@@ -9,9 +9,9 @@ import (
 )
 
 //GetRideTypes return a list of RideTypes based on the SearchFilter
-func GetRideTypes(c Client, f SearchFilter) ([]model.RideType, error) {
-	a, err := getArch(c, f)
-	return a.RideTypes, err
+func GetClassTypes(c Client) ([]model.ClassType, error) {
+	a, err := metadataMappings(c)
+	return a.ClassTypes, err
 }
 
 //GetInstructors return a list of Instructors based on the SearchFilter
